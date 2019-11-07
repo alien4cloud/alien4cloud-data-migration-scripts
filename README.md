@@ -36,6 +36,18 @@ elasticdump
 
 The dump script is not destructive, it just read data from the remote ES and dump it into local file.
 
+You can ensure your config is correct by launching the following command :
+
+```
+source env.sh && curl -k --key "$client_key_path" --cert "$client_cert_path"  "$es_source_url/_cat/indices?v"
+```
+
+or, if you don't use TLS authentication :
+
+```
+source env.sh && curl -k "$es_source_url/_cat/indices?v"
+```
+
 **Step 3**: Launch the dump script.
 
 This script will parse the `indexes.txt` file that contains the index list. All indexes except `plugin` and `pluginconfiguration` will be dump into local files.
@@ -103,6 +115,18 @@ If you have securized your ES cluster following the [documentation](https://www.
 ```
 openssl pkcs12 -in elastic-client-certificates.p12 -out key.pem -nocerts -nodes
 openssl pkcs12 -in elastic-client-certificates.p12 -out cert.pem -clcerts -nokeys
+```
+
+You can ensure your config is correct by launching the following command :
+
+```
+source env.sh && curl -k --key "$client_key_path" --cert "$client_cert_path"  "$es_dest_url/_cat/indices?v"
+```
+
+or, if you don't use TLS authentication :
+
+```
+source env.sh && curl -k "$es_dest_url/_cat/indices?v"
 ```
 
 **Step 10**: Launch the load script that will load data file content into the new 6.6.2 ES cluster :
