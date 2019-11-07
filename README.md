@@ -5,6 +5,8 @@ Your need is to migrate to A4C 3.0.X with a remote Elasticsearch cluster in vers
 
 You can use the same infrastructure for this migration for both A4C and ES machines (no parallel run).
 
+Regarding the amount of data you have and the quality of your network, these operations can take some time. As an example, a test instance having ~ 1000 applications took 5 minutes to dump and 10 minute to load.
+
 # Limitations
 
 Plugins and their configuration won't be migrated:
