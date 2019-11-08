@@ -72,6 +72,17 @@ Install your new [6.6.2 Elasticsearch cluster](https://www.elastic.co/guide/en/e
 
 Install your new 3.0.X A4C instance. Ensure it target your new ES cluster. **Don't start it yet.**
 
+:warning: Some properties have been added in `alien4cloud-config.yml` that you should add if you reuse your legacy config from your 2.2.X setup.
+
+Ensure the following section is present n your config file :
+
+```
+ttl:
+  period: 86400
+```
+
+In newer version of Elasticsearch, there is no more TTL for indexes. We have added a daemon in A4C that check TTL for few indexes (logs, audit, events). This period is the period in seconds between each run of this TTL job.
+
 # Fileset migration
 
 **Step 6**: Migrate fileset.
