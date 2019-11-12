@@ -1,4 +1,4 @@
-deploymentmonitorevents 	        csargitrepository	                0
+csargitrepository 	        csargitrepository	                0
 deploymentinputs	                deploymentinputs	                0
 deploymentmatchingconfiguration  	deploymentmatchingconfiguration	  0
 topology                         	topology                         	0
