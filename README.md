@@ -7,6 +7,8 @@ You can use the same infrastructure for this migration for both A4C and ES machi
 
 Regarding the amount of data you have and the quality of your network, these operations can take some time. As an example, a test instance having ~ 1000 applications took 5 minutes to dump and 10 minute to load.
 
+Don't hesitate to perform a dump even on your running instance (this operation just read data from your ES cluster) in order to estimate the total time your migration will take and the necessary disk space you'll need to perform the dump. If you do that, remember to clean the data directory before performing the real dump.
+
 # Limitations
 
 Plugins and their configuration won't be migrated:
